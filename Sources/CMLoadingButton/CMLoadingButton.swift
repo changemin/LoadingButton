@@ -18,18 +18,19 @@ public enum EndAnimation {
 }
 
 public struct CMLoadingButton<Content: View>: View{
-    @State public var isLoading: Bool = false
+    @Binding var isLoading: Bool
     var style: CMButtonStyle
     let content: Content
-    public init(style: CMButtonStyle, @ViewBuilder builder: () -> Content) {
+    
+    public init(isLoading: Binding<Bool>, style: CMButtonStyle, @ViewBuilder builder: () -> Content) {
+        self._isLoading = isLoading
         self.style = style
         content = builder()
     }
+    
     public var body: some View {
             Button(action: {
-                withAnimation(style.animation) {
-                    self.isLoading.toggle()
-                }
+                
             }) {
                 ZStack {
                     Rectangle()
@@ -42,7 +43,10 @@ public struct CMLoadingButton<Content: View>: View{
                         }
                     }
                     else {
-                        content
+                        Group {
+                            content
+                            
+                        }
                     }
                     
                 }
@@ -50,7 +54,9 @@ public struct CMLoadingButton<Content: View>: View{
             }.frame(width: style.width, height: style.height)
     }
     public func startLoading() -> Void {
-        self.isLoading = true
+        withAnimation() {
+            self.isLoading = true
+        }
     }
     public func endLoading() -> Void {
         self.isLoading = false
