@@ -1,3 +1,7 @@
 # CMLoadingButton
 
-A description of this package.
+## Installaion
+    File ➜ Swift Packages ➜ Add Package Dependancy..
+
+## Requirement
+    + ios 14
