@@ -1,8 +1,10 @@
 <p align="center">
     <img src="src/Logo.gif" width="100%”/>
 
-<p>CMLoadingButton is simple loading button with animation. Made with pure SwiftUI</p>
+
 </p>
+
+### Pure SwiftUI Simple Loading Animation Button
 
 ## ScreenShots
 <img src="src/Preview-zoom.gif" width="500">
