@@ -1,54 +1,31 @@
 import SwiftUI
 
-public struct CMButtonStyle {
-    public init() {
-        
-    }
-    public init(w width: CGFloat, h height: CGFloat, r cornerRadius: CGFloat, bgColor: Color, subColor: Color, animation: Animation) {
-        self.width = width
-        self.height = height
-        self.cornerRadius = cornerRadius
-        self.backgroundColor = bgColor
-        self.loadingBackgroundColor = subColor
-        
-    }
-    public var width: CGFloat = 312
-    public var height: CGFloat = 54
-    public var cornerRadius: CGFloat = 0
-    public var backgroundColor: Color = .green
-    public var loadingBackgroundColor: Color = Color.green.opacity(0.7)
-    public var animation: Animation = .easeInOut
-}
-
-public enum EndAnimation {
-    case normal
-    case shake
-}
-
 public struct CMLoadingButton<Content: View>: View{
     @Binding var isLoading: Bool
     var style: CMButtonStyle? = CMButtonStyle()
     let content: Content
     var action: Void
+    var endAnimation: EndAnimation = .normal
     
-    public init(action: @escaping () -> Void, isLoading: Binding<Bool>, style: CMButtonStyle, @ViewBuilder builder: () -> Content) {
+    public init(action: @escaping () -> Void, isLoading: Binding<Bool>, endAnimation: EndAnimation, style: CMButtonStyle, @ViewBuilder builder: () -> Content) {
         self._isLoading = isLoading
         self.style = style
+        self.endAnimation = endAnimation
         content = builder()
-        print(type(of: action))
+//        print(type(of: action))
     }
     
     public init(action: @escaping () -> Void, isLoading: Binding<Bool>, @ViewBuilder builder: () -> Content) {
+        
         self._isLoading = isLoading
         content = builder()
-        print(type(of: action))
+//        print(type(of: action))
     }
     
     public var body: some View {
             Button(action: {
                 withAnimation(.easeInOut) {
                     isLoading = true
-                    
                 }
                 
                 // custom actions here
@@ -64,7 +41,7 @@ public struct CMLoadingButton<Content: View>: View{
                         }
                     }
                     else {
-                        Group {
+                        VStack {
                             content
                             
                         }
@@ -73,6 +50,14 @@ public struct CMLoadingButton<Content: View>: View{
                 }
                 
             }.frame(width: style!.width, height: style!.height)
+    }
+    public func ifFail(_ endAnimation: EndAnimation) {
+        if(endAnimation == .normal) {
+            // reverse to normal size
+        }
+        else if (endAnimation == .shake) {
+            // reverse to normal size and shake the button
+        }
     }
     public func startLoading() -> Void {
         withAnimation() {
@@ -85,5 +70,6 @@ public struct CMLoadingButton<Content: View>: View{
     public func toggle() -> Void {
         self.isLoading.toggle()
     }
+    
 }
 
