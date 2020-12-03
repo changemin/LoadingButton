@@ -17,8 +17,6 @@ CMLoadingButton is simple loading button with animation. Made in Pure SwiftUI
 
 ## ScreenShots
 <img src="src/Preview.gif" width="250" height="500">
-<img src="src/Screenshot.png" width="250" height="500">
-<img src="src/Screenshot-Loading.png" width="250" height="500">
 ## Requirements
 * Xcode 11+
 * SwiftUI
@@ -29,9 +27,107 @@ CMLoadingButton is simple loading button with animation. Made in Pure SwiftUI
     File ➜ Swift Packages ➜ Add Package Dependancy..
 
 ## Usage
+```
+CMLoadingButton(action: { }, isLoading: <Binding>Bool, style: CMButtonStyle) {
+    // View on the button
+    // style is optional parameter
+}
+```
+* `action` : Actions to do when button clicked
+* `isLoading` : `<Binding>Bool` type. you can control loading status with this.
+* `style`(Optional) : Custom style with `CMButtonStyle`
+#### Custom Style
+```
+CMButtonStyle(width: CGFloat, 
+              height: CGFloat,
+              cornerRadius: CGFloat,
+              backgroundColor: Color,
+              loadingColor: Color,
+              strokeWidth: CGFloat,
+              strokeColor: Color)
+
+// All of the parameter is optional
+```
+* `width`(Optional) : Width of button
+* `height`(Optional) : Height of button
+* `cornerRadius`(Optional) : Corner radius of button
+* `backgroundColor`(Optional) : Background color of button
+* `loadingColor`(Optional) : Background color of button when `Loading`, default is 50% opacity of `backgroundColor`
+* `strokeWidth`(Optional) : Circle loading indicator stroke width
+* `strokeColor`(Optional) : Circle loading indicator stroke Color(default: gray)
+## Example
+#### Simple
+```
+import SwiftUI
+import CMLoadingButton
+
+struct ContentView: View {
+    @State var isLoading: Bool = false
+    
+    var body: some View {
+        CMLoadingButton(action: {
+            // Your Action here
+        }, isLoading: $isLoading) {
+            Text("CMLoadingButton").foregroundColor(Color.white)
+        }
+    }
+}
+```
+#### Result
+<img src="src/Example-1.png" height="100">
+<img src="src/Example-1-1.png" height="100">
+
+#### Applying Fully Custom Style
+```
+import SwiftUI
+import CMLoadingButton
+
+struct ContentView: View {
+    @State var isLoading: Bool = false
+    var style = CMButtonStyle(width: 312,
+                              height: 54,
+                              cornerRadius: 27,
+                              backgroundColor: .orange,
+                              loadingColor: Color.orange.opacity(0.5),
+                              strokeWidth: 5,
+                              strokeColor: .gray)
+    
+    var body: some View {
+        CMLoadingButton(action: {
+            // Your Action here
+        }, isLoading: $isLoading, style: style) {
+            Text("Styled CMLoadingButton").foregroundColor(Color.white)
+        }
+    }
+}
+```
+#### Result
+<img src="src/Example-2.png" height="100">
+<img src="src/Example-2-1.png" height="100">
+
+#### Appling Style Only Needs
+```
+import SwiftUI
+import CMLoadingButton
+
+struct ContentView: View {
+    @State var isLoading: Bool = false
+    
+    var body: some View {
+        CMLoadingButton(action: {
+            // Your Action here
+        }, isLoading: $isLoading, style: CMButtonStyle(cornerRadius: 27, backgroundColor: .orange)) {
+            Text("Styled CMLoadingButton").foregroundColor(Color.white)
+        }
+    }
+}
+```
+#### Same Result
+<img src="src/Example-2.png" height="100">
+<img src="src/Example-2-1.png" height="100">
 
 ## TODO
-- [ ] End animation(normal, Shake, expand)
+- [ ] End animation(normal, shake(when fail), expand)
 - [ ] Support gradient background color
 
 ## Author
