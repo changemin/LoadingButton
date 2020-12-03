@@ -1,12 +1,11 @@
 <p align="center">
     <img src="src/Logo.gif" width="100%”/>
-
-
 </p>
 
-### Pure SwiftUI Simple Loading Animation Button
+Pure SwiftUI Simple Loading Animation Button
 
 ## ScreenShots
+
 <img src="src/Preview-zoom.gif" width="500">
 
 ## Requirements
