@@ -1,12 +1,5 @@
 import SwiftUI
 
-public func endLoading(with: EndAnimation) -> Void {
-    withAnimation {
-        //isLoading = false
-        // shake or not
-    }
-}
-
 public struct CMLoadingButton<Content: View>: View{
     @Binding var isLoading: Bool
     var style: CMButtonStyle? = CMButtonStyle()
@@ -14,44 +7,34 @@ public struct CMLoadingButton<Content: View>: View{
     var endAnimation: EndAnimation = .normal
     var action: () -> () = {}
     
-    public init(action: @escaping () -> Void, isLoading: Binding<Bool>, endAnimation: EndAnimation, style: CMButtonStyle, @ViewBuilder builder: () -> Content) {
+    public init(action: @escaping () -> Void, isLoading: Binding<Bool>, endAnimation: EndAnimation? = nil, style: CMButtonStyle? = nil, @ViewBuilder builder: () -> Content) {
         self._isLoading = isLoading
-        self.style = style
-        self.endAnimation = endAnimation
+        self.style = style ?? CMButtonStyle()
+        self.endAnimation = endAnimation ?? .normal
         content = builder()
-        print(type(of: action))
-    }
-    
-    public init(action: @escaping () -> Void, isLoading: Binding<Bool>, @ViewBuilder builder: () -> Content) {
-        self._isLoading = isLoading
-        content = builder()
-        self.action = action
     }
     
     public var body: some View {
         Button(action: {
-            withAnimation(.easeInOut) {
-                isLoading = true
+            if !isLoading {
+                action()
             }
-            action()
+            isLoading = true
         }) {
             ZStack {
                 Rectangle()
                     .fill(isLoading ? style!.loadingBackgroundColor : style!.backgroundColor)
                     .frame(width: isLoading ? style!.height : style!.width, height: style!.height)
                     .cornerRadius(isLoading ? style!.height/2 : style!.cornerRadius)
+                    .animation(.easeInOut)
                 if isLoading {
-                    if #available(iOS 14.0, *) {
-                        ProgressView()
-                    }
+                    CircleLoadingBar(style: style!)
                 }
                 else {
                     VStack {
-                        content
-                        
+                        content.animation(.easeInOut)
                     }
                 }
-                
             }
         }.frame(width: style!.width, height: style!.height)
     }
@@ -64,10 +47,15 @@ public struct CMLoadingButton<Content: View>: View{
     }
     
     /// End Loading with EndAnimation(normal, shake, expand)
-    public func endLoading(with: EndAnimation) -> Void {
-        withAnimation {
-            self.isLoading = false
-        }
+//    public func endLoading(with: EndAnimation) -> Void {
+//        print("endLoading")
+//        withAnimation {
+//            self.isLoading = false
+//        }
+//    }
+    
+    public func endLoading() -> Void {
+        print("endLoading")
     }
 }
 
