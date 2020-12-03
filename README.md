@@ -2,13 +2,12 @@
     <img src="src/Logo.gif" width="100%”/>
 </p>
 
+
 Pure SwiftUI Simple Loading Animation Button
 
 ## ScreenShots
 
 ![](src/Preview-zoom.gif)
-
-<img src="src/Preview-zoom.gif" width="500"/>
 
 ## Requirements
 * Xcode 11+
