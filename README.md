@@ -6,7 +6,7 @@ Pure SwiftUI Simple Loading Animation Button
 
 ## ScreenShots
 
-<img src="src/Preview-zoom.gif" width="500">
+<img src="src/Preview-zoom.gif" width="500"/>
 
 ## Requirements
 * Xcode 11+
