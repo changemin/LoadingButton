@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="src/Logo.gif" width="100%” alt="CMLoadingButton" />
+    <img src="src/Logo.gif" width="100%”/>
 
 <p>CMLoadingButton is simple loading button with animation. Made with pure SwiftUI</p>
 </p>
