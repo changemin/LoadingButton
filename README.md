@@ -1,22 +1,12 @@
 <p align="center">
     <img src="src/Logo.gif" width="100%” alt="CMLoadingButton" />
+
+<p>CMLoadingButton is simple loading button with animation. Made with pure SwiftUI</p>
 </p>
 
-#
-
-CMLoadingButton is simple loading button with animation. Made in Pure SwiftUI
-
-- [Screenshots](#screenshots)
-- [Requirements](#requirements)
-- [Installation](#installation)
-    - [Swift Package Manager](#swiftpackagemanager)
-- [Usage](#usage)
-- [Todo](#todo)
-- [Author](#author)
-- [License](#license)
-
 ## ScreenShots
-<img src="src/Preview.gif" width="250" height="500">
+<img src="src/Preview-zoom.gif" width="500">
+
 ## Requirements
 * Xcode 11+
 * SwiftUI
@@ -36,6 +26,7 @@ CMLoadingButton(action: { }, isLoading: <Binding>Bool, style: CMButtonStyle) {
 * `action` : Actions to do when button clicked
 * `isLoading` : `<Binding>Bool` type. you can control loading status with this.
 * `style`(Optional) : Custom style with `CMButtonStyle`
+
 #### Custom Style
 ```
 CMButtonStyle(width: CGFloat, 
