@@ -17,7 +17,7 @@
     File ➜ Swift Packages ➜ Add Package Dependancy..
 
 ## Usage
-```
+```Swift
 CMLoadingButton(action: { }, isLoading: <Binding>Bool, style: CMButtonStyle) {
     // View on the button
     // style is optional parameter
@@ -28,7 +28,7 @@ CMLoadingButton(action: { }, isLoading: <Binding>Bool, style: CMButtonStyle) {
 * `style`(Optional) : Custom style with `CMButtonStyle`
 
 #### Custom Style
-```
+```Swift
 CMButtonStyle(width: CGFloat, 
               height: CGFloat,
               cornerRadius: CGFloat,
@@ -48,7 +48,7 @@ CMButtonStyle(width: CGFloat,
 * `strokeColor`(Optional) : Circle loading indicator stroke Color(default: gray)
 ## Example
 #### Simple
-```
+```Swift
 import SwiftUI
 import CMLoadingButton
 
@@ -69,7 +69,7 @@ struct ContentView: View {
 <img src="src/Example-1-1.png" height="100">
 
 #### Applying Fully Custom Style
-```
+```Swift
 import SwiftUI
 import CMLoadingButton
 
@@ -97,7 +97,7 @@ struct ContentView: View {
 <img src="src/Example-2-1.png" height="100">
 
 #### Appling Style Only Needs
-```
+```Swift
 import SwiftUI
 import CMLoadingButton
 
