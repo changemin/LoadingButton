@@ -47,7 +47,7 @@ CMButtonStyle(width: CGFloat,
 * `strokeWidth`(Optional) : Circle loading indicator stroke width
 * `strokeColor`(Optional) : Circle loading indicator stroke Color(default: gray)
 ## Example
-#### Simple
+### Simple
 ```Swift
 import SwiftUI
 import CMLoadingButton
@@ -64,11 +64,11 @@ struct ContentView: View {
     }
 }
 ```
-#### Result
+### Result
 <img src="src/Example-1.png" height="100">
 <img src="src/Example-1-1.png" height="100">
 
-#### Applying Fully Custom Style
+### Applying Fully Custom Style
 ```Swift
 import SwiftUI
 import CMLoadingButton
@@ -92,11 +92,11 @@ struct ContentView: View {
     }
 }
 ```
-#### Result
+### Result
 <img src="src/Example-2.png" height="100">
 <img src="src/Example-2-1.png" height="100">
 
-#### Appling Style Only Needs
+### Appling Style Only Needs
 ```Swift
 import SwiftUI
 import CMLoadingButton
@@ -113,7 +113,7 @@ struct ContentView: View {
     }
 }
 ```
-#### Same Result
+### Same Result
 <img src="src/Example-2.png" height="100">
 <img src="src/Example-2-1.png" height="100">
 
