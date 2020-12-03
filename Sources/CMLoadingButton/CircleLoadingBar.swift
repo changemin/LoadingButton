@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct CircleLoadingBar: View {
     @State private var isLoading = false
     @State var style: CMButtonStyle

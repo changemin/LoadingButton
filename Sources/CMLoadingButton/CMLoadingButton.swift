@@ -4,14 +4,13 @@ public struct CMLoadingButton<Content: View>: View{
     @Binding var isLoading: Bool
     var style: CMButtonStyle? = CMButtonStyle()
     let content: Content
-    var endAnimation: EndAnimation = .normal
     var action: () -> () = {}
     
-    public init(action: @escaping () -> Void, isLoading: Binding<Bool>, endAnimation: EndAnimation? = nil, style: CMButtonStyle? = nil, @ViewBuilder builder: () -> Content) {
+    public init(action: @escaping () -> Void, isLoading: Binding<Bool>, style: CMButtonStyle? = nil, @ViewBuilder builder: () -> Content) {
         self._isLoading = isLoading
         self.style = style ?? CMButtonStyle()
-        self.endAnimation = endAnimation ?? .normal
         content = builder()
+        self.action = action
     }
     
     public var body: some View {
@@ -37,25 +36,6 @@ public struct CMLoadingButton<Content: View>: View{
                 }
             }
         }.frame(width: style!.width, height: style!.height)
-    }
-    
-    /// Start Loading
-    public func startLoading() -> Void {
-        withAnimation() {
-            self.isLoading = true
-        }
-    }
-    
-    /// End Loading with EndAnimation(normal, shake, expand)
-//    public func endLoading(with: EndAnimation) -> Void {
-//        print("endLoading")
-//        withAnimation {
-//            self.isLoading = false
-//        }
-//    }
-    
-    public func endLoading() -> Void {
-        print("endLoading")
     }
 }
 
