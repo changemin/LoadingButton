@@ -3,6 +3,8 @@
 </p>
 
 ![](src/Preview-zoom.gif)
+
+## ScreenShots
 <img src="src/Preview-zoom.gif">
 
 ## Requirements
