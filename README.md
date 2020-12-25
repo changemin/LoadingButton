@@ -153,8 +153,4 @@ CMLoadingButton is available under the MIT license. See the `LICENSE` file for m
 
 ## ✍️ Author
 
-<<<<<<< HEAD
 - [🇰🇷@Changemin](https://github.com/kylelobo)
-=======
-CMLoadingButton is available under the MIT license. See the `LICENSE` file for more info.
->>>>>>> 2443f669fa37d84f1e95a26556076bfb18f11e1f
