@@ -38,7 +38,7 @@
     File ➜ Swift Packages ➜ Add Package Dependancy..
 
 ```Swift
-.package(url: "https://github.com/CM-Material/CMLoadingButton", from: "1.0.1")
+.package(url: "https://github.com/CM-Material/CMLoadingButton", from: "1.0.0")
 ```
 
 ## 🎈Usage
