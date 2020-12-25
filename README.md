@@ -2,19 +2,12 @@
  <img width=300px  src="src/Logo.gif" alt="Project logo"></a>
 </p>
 
-<<<<<<< HEAD
 <h3 align="center">🌬CMFloatingTextField🌬</h3>
 
 <div align="center">
 
 ![License](https://img.shields.io/github/license/CM-Material/CMLoadingButton?style=for-the-badge)
 ![Release](https://img.shields.io/github/v/release/CM-Material/CMLoadingButton?style=for-the-badge)
-=======
-![](src/Preview-zoom.gif)
-
-## ScreenShots
-<img src="src/Preview-zoom.gif">
->>>>>>> 2443f669fa37d84f1e95a26556076bfb18f11e1f
 
 
 </div>
