@@ -2,7 +2,7 @@
  <img width=300px  src="src/Logo.gif" alt="Project logo"></a>
 </p>
 
-<h3 align="center">🌬CMFloatingTextField🌬</h3>
+<h3 align="center">✋ CMLoadingButton ✋</h3>
 
 <div align="center">
 
@@ -15,7 +15,7 @@
 ---
 
 <p align="center"> 
-    Pure SwiftUI Simple Loading Animation Button
+    Simple Loading Animation Button for SwiftUI
     <br> 
 </p>
 
@@ -43,7 +43,7 @@
 
 ## 🎈Usage
 ```Swift
-CMLoadingButton(action: { }, isLoading: <Binding>Bool, style: CMButtonStyle) {
+LoadingButton(action: { }, isLoading: <Binding>Bool, style: CMButtonStyle) {
     // View on the button
     // style is optional parameter
 ```
@@ -81,7 +81,7 @@ struct ContentView: View {
     @State var isLoading: Bool = false
     
     var body: some View {
-        CMLoadingButton(action: {
+        LoadingButton(action: {
             // Your Action here
         }, isLoading: $isLoading) {
             Text("CMLoadingButton").foregroundColor(Color.white)
@@ -109,7 +109,7 @@ struct ContentView: View {
                               strokeColor: .gray)
     
     var body: some View {
-        CMLoadingButton(action: {
+        LoadingButton(action: {
             // Your Action here
         }, isLoading: $isLoading, style: style) {
             Text("Styled CMLoadingButton").foregroundColor(Color.white)
@@ -121,7 +121,7 @@ struct ContentView: View {
 <img src="src/Example-2.png" height="100">
 <img src="src/Example-2-1.png" height="100">
 
-### 💅🏻 Appling Style Only Needs
+### 💅🏻 Styling Only Needs
 ```Swift
 import SwiftUI
 import CMLoadingButton
@@ -130,7 +130,7 @@ struct ContentView: View {
     @State var isLoading: Bool = false
     
     var body: some View {
-        CMLoadingButton(action: {
+        LoadingButton(action: {
             // Your Action here
         }, isLoading: $isLoading, style: CMButtonStyle(cornerRadius: 27, backgroundColor: .orange)) {
             Text("Styled CMLoadingButton").foregroundColor(Color.white)
@@ -153,4 +153,4 @@ CMLoadingButton is available under the MIT license. See the `LICENSE` file for m
 
 ## ✍️ Author
 
-- [🇰🇷@Changemin](https://github.com/kylelobo)
+- Byun Kyung Min ➜ [🇰🇷@Changemin](https://github.com/Changemin)
