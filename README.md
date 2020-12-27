@@ -43,7 +43,7 @@
 
 ## 🎈Usage
 ```Swift
-LoadingButton(action: { }, isLoading: <Binding>Bool, style: CMButtonStyle) {
+CMLoadingButton(action: { }, isLoading: <Binding>Bool, style: CMButtonStyle) {
     // View on the button
     // style is optional parameter
 ```
@@ -81,7 +81,7 @@ struct ContentView: View {
     @State var isLoading: Bool = false
     
     var body: some View {
-        LoadingButton(action: {
+        CMLoadingButton(action: {
             // Your Action here
         }, isLoading: $isLoading) {
             Text("CMLoadingButton").foregroundColor(Color.white)
@@ -109,7 +109,7 @@ struct ContentView: View {
                               strokeColor: .gray)
     
     var body: some View {
-        LoadingButton(action: {
+        CMLoadingButton(action: {
             // Your Action here
         }, isLoading: $isLoading, style: style) {
             Text("Styled CMLoadingButton").foregroundColor(Color.white)
@@ -130,7 +130,7 @@ struct ContentView: View {
     @State var isLoading: Bool = false
     
     var body: some View {
-        LoadingButton(action: {
+        CMLoadingButton(action: {
             // Your Action here
         }, isLoading: $isLoading, style: CMButtonStyle(cornerRadius: 27, backgroundColor: .orange)) {
             Text("Styled CMLoadingButton").foregroundColor(Color.white)
