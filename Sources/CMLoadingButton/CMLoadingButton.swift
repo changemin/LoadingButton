@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct CMLoadingButton<Content: View>: View{
+public struct LoadingButton<Content: View>: View{
     @Binding var isLoading: Bool
     var style: CMButtonStyle? = CMButtonStyle()
     let content: Content
