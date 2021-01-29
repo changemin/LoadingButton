@@ -2,7 +2,7 @@
  <img width=300px  src="imgs/Logo.gif" alt="Project logo"></a>
 </p>
 
-<h3 align="center">✋ SwiftUI LoadingButton ✋</h3>
+<h3 align="center">🔄 SwiftUI LoadingButton 🔄</h3>
 
 <div align="center">
 
