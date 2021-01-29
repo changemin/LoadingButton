@@ -38,7 +38,7 @@
     File ➜ Swift Packages ➜ Add Package Dependancy..
 
 ```Swift
-.package(url: "https://github.com/Changemin/LoadingButton", from: "1.1.0")
+.package(url: "https://github.com/Changemin/LoadingButton", from: "1.1.1")
 ```
 
 ## 🎈Usage
