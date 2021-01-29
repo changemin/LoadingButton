@@ -1,14 +1,14 @@
 import SwiftUI
 
-public struct CMLoadingButton<Content: View>: View{
+public struct LoadingButton<Content: View>: View{
     @Binding var isLoading: Bool
-    var style: CMButtonStyle? = CMButtonStyle()
+    var style: LoadingButtonStyle? = LoadingButtonStyle()
     let content: Content
     var action: () -> () = {}
     
-    public init(action: @escaping () -> Void, isLoading: Binding<Bool>, style: CMButtonStyle? = nil, @ViewBuilder builder: () -> Content) {
+    public init(action: @escaping () -> Void, isLoading: Binding<Bool>, style: LoadingButtonStyle? = nil, @ViewBuilder builder: () -> Content) {
         self._isLoading = isLoading
-        self.style = style ?? CMButtonStyle()
+        self.style = style ?? LoadingButtonStyle()
         content = builder()
         self.action = action
     }

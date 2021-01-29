@@ -2,12 +2,12 @@
  <img width=300px  src="src/Logo.gif" alt="Project logo"></a>
 </p>
 
-<h3 align="center">✋ CMLoadingButton ✋</h3>
+<h3 align="center">✋ SwiftUI LoadingButton ✋</h3>
 
 <div align="center">
 
-![License](https://img.shields.io/github/license/CM-Material/CMLoadingButton?style=for-the-badge)
-![Release](https://img.shields.io/github/v/release/CM-Material/CMLoadingButton?style=for-the-badge)
+![License](https://img.shields.io/github/license/Changemin/LoadingButton?style=for-the-badge)
+![Release](https://img.shields.io/github/v/release/Changemin/LoadingButton?style=for-the-badge)
 
 
 </div>
@@ -38,28 +38,28 @@
     File ➜ Swift Packages ➜ Add Package Dependancy..
 
 ```Swift
-.package(url: "https://github.com/CM-Material/CMLoadingButton", from: "1.0.1")
+.package(url: "https://github.com/Changemin/LoadingButton", from: "1.1.0")
 ```
 
 ## 🎈Usage
 ```Swift
-CMLoadingButton(action: { }, isLoading: <Binding>Bool, style: CMButtonStyle) {
+LoadingButton(action: { }, isLoading: <Binding>Bool, style: LoadingButtonStyle) {
     // View on the button
     // style is optional parameter
 ```
 * `action` : Actions to do when button clicked
 * `isLoading` : `<Binding>Bool` type. you can control loading status with this.
-* `style`(Optional) : Custom style with `CMButtonStyle`
+* `style`(Optional) : Custom style with `LoadingButtonStyle`
 
 #### 🛠Custom Modifiers
 ```Swift
-CMButtonStyle(width: CGFloat, 
-              height: CGFloat,
-              cornerRadius: CGFloat,
-              backgroundColor: Color,
-              loadingColor: Color,
-              strokeWidth: CGFloat,
-              strokeColor: Color)
+LoadingButtonStyle(width: CGFloat, 
+                   height: CGFloat,
+                   cornerRadius: CGFloat,
+                   backgroundColor: Color,
+                   loadingColor: Color,
+                   strokeWidth: CGFloat,
+                   strokeColor: Color)
 
 // All of the parameter is optional
 ```
@@ -75,16 +75,16 @@ CMButtonStyle(width: CGFloat,
 #### 👶 Simple
 ```Swift
 import SwiftUI
-import CMLoadingButton
+import LoadingButton
 
 struct ContentView: View {
     @State var isLoading: Bool = false
     
     var body: some View {
-        CMLoadingButton(action: {
+        LoadingButton(action: {
             // Your Action here
         }, isLoading: $isLoading) {
-            Text("CMLoadingButton").foregroundColor(Color.white)
+            Text("LoadingButton").foregroundColor(Color.white)
         }
     }
 }
@@ -96,11 +96,11 @@ struct ContentView: View {
 ### 💅🏻 Applying Fully Custom Style
 ```Swift
 import SwiftUI
-import CMLoadingButton
+import LoadingButton
 
 struct ContentView: View {
     @State var isLoading: Bool = false
-    var style = CMButtonStyle(width: 312,
+    var style = LoadingButtonStyle(width: 312,
                               height: 54,
                               cornerRadius: 27,
                               backgroundColor: .orange,
@@ -109,10 +109,10 @@ struct ContentView: View {
                               strokeColor: .gray)
     
     var body: some View {
-        CMLoadingButton(action: {
+        LoadingButton(action: {
             // Your Action here
         }, isLoading: $isLoading, style: style) {
-            Text("Styled CMLoadingButton").foregroundColor(Color.white)
+            Text("Styled LoadingButton").foregroundColor(Color.white)
         }
     }
 }
@@ -124,16 +124,16 @@ struct ContentView: View {
 ### 💅🏻 Styling Only Needs
 ```Swift
 import SwiftUI
-import CMLoadingButton
+import LoadingButton
 
 struct ContentView: View {
     @State var isLoading: Bool = false
     
     var body: some View {
-        CMLoadingButton(action: {
+        LoadingButton(action: {
             // Your Action here
-        }, isLoading: $isLoading, style: CMButtonStyle(cornerRadius: 27, backgroundColor: .orange)) {
-            Text("Styled CMLoadingButton").foregroundColor(Color.white)
+        }, isLoading: $isLoading, style: LoadingButtonStyle(cornerRadius: 27, backgroundColor: .orange)) {
+            Text("Styled LoadingButton").foregroundColor(Color.white)
         }
     }
 }
@@ -149,7 +149,7 @@ struct ContentView: View {
 
 ## 📜 License
 
-CMLoadingButton is available under the MIT license. See the `LICENSE` file for more info.
+LoadingButton is available under the MIT license. See the `LICENSE` file for more info.
 
 ## ✍️ Author
 

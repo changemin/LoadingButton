@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// A Fully Configuarable Button Style
-public struct CMButtonStyle {
+public struct LoadingButtonStyle {
     public init(width: CGFloat? = nil,
                 height: CGFloat? = nil,
                 cornerRadius: CGFloat? = nil,
