@@ -1,5 +1,5 @@
 <p align="center">
- <img width=300px  src="src/Logo.gif" alt="Project logo"></a>
+ <img width=300px  src="imgs/Logo.gif" alt="Project logo"></a>
 </p>
 
 <h3 align="center">✋ SwiftUI LoadingButton ✋</h3>
@@ -22,7 +22,7 @@
 ## 📹 Preview
 
 <p align="center">
-    <img src="src/Preview-zoom.gif" width="40%" />
+    <img src="imgs/Preview-zoom.gif" width="40%" />
 </p>
 
 ## 🏁 Getting Started
@@ -90,8 +90,8 @@ struct ContentView: View {
 }
 ```
 ### Result
-<img src="src/Example-1.png" height="100">
-<img src="src/Example-1-1.png" height="100">
+<img src="imgs/Example-1.png" height="100">
+<img src="imgs/Example-1-1.png" height="100">
 
 ### 💅🏻 Applying Fully Custom Style
 ```Swift
@@ -118,8 +118,8 @@ struct ContentView: View {
 }
 ```
 ### Result
-<img src="src/Example-2.png" height="100">
-<img src="src/Example-2-1.png" height="100">
+<img src="imgs/Example-2.png" height="100">
+<img src="imgs/Example-2-1.png" height="100">
 
 ### 💅🏻 Styling Only Needs
 ```Swift
@@ -139,8 +139,8 @@ struct ContentView: View {
 }
 ```
 ### Same Result
-<img src="src/Example-2.png" height="100">
-<img src="src/Example-2-1.png" height="100">
+<img src="imgs/Example-2.png" height="100">
+<img src="imgs/Example-2-1.png" height="100">
 
 
 ## ✅ TODO
