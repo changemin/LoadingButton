@@ -2,7 +2,7 @@ import SwiftUI
 
 public struct LoadingButton<Content: View>: View{
     @Binding var isLoading: Bool
-    var style: LoadingButtonStyle? = LoadingButtonStyle()
+    var style: LoadingButtonStyle
     let content: Content
     var action: () -> () = {}
     
@@ -22,12 +22,12 @@ public struct LoadingButton<Content: View>: View{
         }) {
             ZStack {
                 Rectangle()
-                    .fill(isLoading ? style!.loadingBackgroundColor : style!.backgroundColor)
-                    .frame(width: isLoading ? style!.height : style!.width, height: style!.height)
-                    .cornerRadius(isLoading ? style!.height/2 : style!.cornerRadius)
+                    .fill(isLoading ? style.loadingBackgroundColor : style.backgroundColor)
+                    .frame(width: isLoading ? style.height : style.width, height: style.height)
+                    .cornerRadius(isLoading ? style.height/2 : style.cornerRadius)
                     .animation(.easeInOut)
                 if isLoading {
-                    CircleLoadingBar(style: style!)
+                    CircleLoadingBar(style: style)
                 }
                 else {
                     VStack {
@@ -35,7 +35,7 @@ public struct LoadingButton<Content: View>: View{
                     }
                 }
             }
-        }.frame(width: style!.width, height: style!.height)
+        }.frame(width: style.width, height: style.height)
     }
 }
 
