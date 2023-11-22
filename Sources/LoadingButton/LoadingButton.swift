@@ -17,9 +17,9 @@ public struct LoadingButton<Content: View>: View{
     public var body: some View {
         Button(action: {
             if !isLoading {
+                isLoading = true
                 action()
             }
-            isLoading = true
         }) {
             ZStack {
                 Rectangle()
